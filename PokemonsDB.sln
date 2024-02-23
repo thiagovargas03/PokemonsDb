@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonsDB", "PokemonsDB.csproj", "{67C8EC38-8EE8-4283-9F0D-3B2DE34EC01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "..\Dominio\Dominio.csproj", "{A1E4D64E-A5C4-4979-8804-95B3FF546A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "..\Negocio\Negocio.csproj", "{CC04AB9F-8745-454B-947F-0786B49B1466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67C8EC38-8EE8-4283-9F0D-3B2DE34EC01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C8EC38-8EE8-4283-9F0D-3B2DE34EC01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C8EC38-8EE8-4283-9F0D-3B2DE34EC01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C8EC38-8EE8-4283-9F0D-3B2DE34EC01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E4D64E-A5C4-4979-8804-95B3FF546A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E4D64E-A5C4-4979-8804-95B3FF546A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E4D64E-A5C4-4979-8804-95B3FF546A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E4D64E-A5C4-4979-8804-95B3FF546A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC04AB9F-8745-454B-947F-0786B49B1466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC04AB9F-8745-454B-947F-0786B49B1466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC04AB9F-8745-454B-947F-0786B49B1466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC04AB9F-8745-454B-947F-0786B49B1466}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16B2678B-41CA-4D72-809D-9A2DE13B9B08}
+	EndGlobalSection
+EndGlobal
