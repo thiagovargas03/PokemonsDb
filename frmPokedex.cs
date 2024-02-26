@@ -34,6 +34,7 @@ namespace PokemonsDB
                 listaPokemon = negocio.listar();
                 dvgPokemons.DataSource = listaPokemon;
                 dvgPokemons.Columns["UrlImagen"].Visible = false;
+                dvgPokemons.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -71,6 +72,17 @@ namespace PokemonsDB
         {
             frmAgregarPokemon frmAgregarPokemon = new frmAgregarPokemon();
             frmAgregarPokemon.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Pokemon seleccionado;
+            seleccionado = (Pokemon)dvgPokemons.CurrentRow.DataBoundItem;
+
+
+            frmAgregarPokemon frmModificarPokemon = new frmAgregarPokemon(seleccionado);
+            frmModificarPokemon.ShowDialog();
             cargar();
         }
     }
