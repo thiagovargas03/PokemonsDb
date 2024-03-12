@@ -34,23 +34,29 @@ namespace PokemonsDB
             {
                 listaPokemon = negocio.listar();
                 dvgPokemons.DataSource = listaPokemon;
-                dvgPokemons.Columns["UrlImagen"].Visible = false;
-                dvgPokemons.Columns["Id"].Visible = false;
+                ocultarColumnas();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.ToString());
             }
+        }
 
-
-
+        private void ocultarColumnas()
+        {
+            dvgPokemons.Columns["UrlImagen"].Visible = false;
+            dvgPokemons.Columns["Id"].Visible = false;
         }
 
         private void dvgPokemons_SelectionChanged(object sender, EventArgs e)
         {
-            Pokemon seleccionado = (Pokemon)dvgPokemons.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
+
+            if (dvgPokemons.CurrentRow != null)
+            {
+                Pokemon seleccionado = (Pokemon)dvgPokemons.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -75,7 +81,6 @@ namespace PokemonsDB
             frmAgregarPokemon.ShowDialog();
             cargar();
         }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Pokemon seleccionado;
@@ -86,7 +91,6 @@ namespace PokemonsDB
             frmModificarPokemon.ShowDialog();
             cargar();
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminar();
@@ -95,8 +99,6 @@ namespace PokemonsDB
         {
             eliminar(true);
         }
-
-
         private void eliminar(bool logico = false)
         {
             PokemonNegocio negocio = new PokemonNegocio();
@@ -124,6 +126,24 @@ namespace PokemonsDB
             }
 
         }
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Pokemon> listaFiltrada;
+            string filtro = txtFiltrar.Text;
 
+            if (filtro != "")
+            {
+                listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains( filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaPokemon;
+            }
+
+
+            dvgPokemons.DataSource = null;
+            dvgPokemons.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
     }
 }
