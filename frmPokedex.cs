@@ -128,10 +128,14 @@ namespace PokemonsDB
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
+        }
+
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
             List<Pokemon> listaFiltrada;
             string filtro = txtFiltrar.Text;
 
-            if (filtro != "")
+            if (filtro.Length >2)
             {
                 listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains( filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -144,6 +148,7 @@ namespace PokemonsDB
             dvgPokemons.DataSource = null;
             dvgPokemons.DataSource = listaFiltrada;
             ocultarColumnas();
+
         }
     }
 }
