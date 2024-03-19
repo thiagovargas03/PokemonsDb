@@ -43,6 +43,7 @@
             this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.pbxPokemon = new System.Windows.Forms.PictureBox();
+            this.btnGuardarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,18 +170,29 @@
             // 
             // pbxPokemon
             // 
-            this.pbxPokemon.Location = new System.Drawing.Point(292, 41);
+            this.pbxPokemon.Location = new System.Drawing.Point(316, 41);
             this.pbxPokemon.Name = "pbxPokemon";
             this.pbxPokemon.Size = new System.Drawing.Size(216, 192);
             this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPokemon.TabIndex = 13;
             this.pbxPokemon.TabStop = false;
             // 
+            // btnGuardarImagen
+            // 
+            this.btnGuardarImagen.Location = new System.Drawing.Point(275, 143);
+            this.btnGuardarImagen.Name = "btnGuardarImagen";
+            this.btnGuardarImagen.Size = new System.Drawing.Size(35, 23);
+            this.btnGuardarImagen.TabIndex = 14;
+            this.btnGuardarImagen.Text = "+";
+            this.btnGuardarImagen.UseVisualStyleBackColor = true;
+            this.btnGuardarImagen.Click += new System.EventHandler(this.btnGuardarImagen_Click);
+            // 
             // frmAgregarPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 318);
+            this.ClientSize = new System.Drawing.Size(585, 298);
+            this.Controls.Add(this.btnGuardarImagen);
             this.Controls.Add(this.pbxPokemon);
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.PictureBox pbxPokemon;
+        private System.Windows.Forms.Button btnGuardarImagen;
     }
 }

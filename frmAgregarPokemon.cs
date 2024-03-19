@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using System.Configuration;
 
 namespace PokemonsDB
 {
     public partial class frmAgregarPokemon : Form
     {
         private Pokemon pokemon = null;
+        private OpenFileDialog archivo = null;
         public frmAgregarPokemon(Pokemon pokemon)
         {
 
@@ -62,7 +65,10 @@ namespace PokemonsDB
                     MessageBox.Show("Agregado exitosamente");
 
                 }
-
+                if (archivo != null & !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["image-folder"] + archivo.SafeFileName);
+                }
 
                 Close();
             }
@@ -121,7 +127,19 @@ namespace PokemonsDB
 
         }
 
+        private void btnGuardarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
 
 
+               
+            }
+
+        }
     }
 }
